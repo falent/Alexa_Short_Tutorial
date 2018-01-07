@@ -1,4 +1,4 @@
-#A Short tutorial for Alexa Event 
+# A Short tutorial for Alexa Event 
 
 I just put here the most valuable information for Node.js, Javascript, mongoDB and Alexa. I collected some data and examples from different sources. I wrote all sources the end of this document :) I tried to keep it really short that you get minimum knowledge to use node.js. I assume that you know already any program language so in some parts I just add only javascript code examples :) Of course you don't need to read all of this file but it can help you to understand what we are going to do during our meeting.
 
@@ -8,18 +8,18 @@ I just put here the most valuable information for Node.js, Javascript, mongoDB a
 - [Alexa](#id-section3) 
 
 I uploaded this file to my github. This is version 1.0 ;) If you want to contribute and improve (change) something just let me know!
-##Node.js <div id='id-section1'/> 
+## Node.js <div id='id-section1'/> 
 
 Node.js is a very powerful JavaScript-based framework/platform built on Google Chrome's JavaScript V8 Engine. It is used to develop I/O intensive web applications like video streaming sites, single-page applications, and other web applications. Node.js is open source, completely free, and used by thousands of developers around the world. 
 
-###Features of Node.js
+### Features of Node.js
 Following are some of the important features that make Node.js the first choice of software architects.
 Asynchronous and Event Driven − All APIs of Node.js library are asynchronous, that is, non-blocking. It essentially means a Node.js based server never waits for an API to return data. The server moves to the next API after calling it and a notification mechanism of Events of Node.js helps the server to get a response from the previous API call.
 Very Fast − Being built on Google Chrome's V8 JavaScript Engine, Node.js library is very fast in code execution.
 Single Threaded but Highly Scalable − Node.js uses a single threaded model with event looping. Event mechanism helps the server to respond in a non-blocking way and makes the server highly scalable as opposed to traditional servers which create limited threads to handle requests. Node.js uses a single threaded program and the same program can provide service to a much larger number of requests than traditional servers like Apache HTTP Server.
 No Buffering − Node.js applications never buffer any data. These applications simply output the data in chunks.
 
-###Environment:
+### Environment:
 If you use, my VM (you will find everything here: 
 
 (https://github.com/falent/Alexa_universal_skill_template_VM)
@@ -41,7 +41,7 @@ If everything is fine with your installation, this should produce the following 
 ```
 $ Hello, World!
 ```
-###Package.json
+### Package.json
 package.json is present in the root directory of any Node application/module and is used to define the properties of a package. Let's open package.json of my template alexa skill:
 
 ```json
@@ -96,7 +96,7 @@ Thanks package.json you are able to install all node.js modules. You need only u
 $ npm install 
 ```
 All required modules will be saved to your project directory.
-###Module
+### Module
 If you want to use an additional module you just declare it in your variable in a JS script file:
 
 ```javascript
@@ -112,13 +112,13 @@ Example code to import module:
 ```javascript
 const fs = require('fs-extra')
 ```
-###Export your own module from another file
+### Export your own module from another file
 If you want to export your module you need declare it like this:
 ```javascript
 var greet = “Hello from me!”
 module.exports = greet;
 ```
-###Blocking Code vs non blocking code example
+### Blocking Code vs non blocking code example
 The most weird thing with node.js is non blocking code. Please compare 2 examples:
 
 Create a text file named input.txt with the following content :
@@ -149,7 +149,7 @@ Program Ended
 ```
 
 It was a blocking code example
-###Non-Blocking Code Example
+### Non-Blocking Code Example
 Create nonBlockingCode.js
 
 ```javascript
@@ -184,15 +184,15 @@ source of node.js tutorial:
 https://www.tutorialspoint.com/nodejs/
 I picked only the most valuable info for our event :)
 
-##Javascript Code examples
+## Javascript Code examples
 I just copy some code examples from tutorial: https://www.tutorialspoint.com/javascript/ 
-###JavaScript Variables
+### JavaScript Variables
 ```javascript
 var name = "Ali";
 var money;
 money = 2000.50;
 ```
-###Variable Scope
+### Variable Scope
 ```javascript
 var myVar = "global"; // Declare a global variable
 
@@ -202,7 +202,7 @@ function checkscope( ) {
              console.log(myVar);
 }
 ```
-###Operator and Description
+### Operator and Description
 
 + +(Addition) Adds two operands Ex: A + B will give 30 
 
@@ -218,7 +218,7 @@ function checkscope( ) {
 
 + -- (Decrement) Decreases an integer value by one Ex: A-- will give 9
 
-###Logical Operators
+### Logical Operators
 + && (Logical AND) If both the operands are non-zero, then the condition becomes true. Ex: (A && B) is true.
 
 + || (Logical OR) If any of the two operands are non-zero, then the condition becomes true. Ex: (A || B) is true. 
@@ -227,7 +227,7 @@ function checkscope( ) {
 Assignment Operators
 
 
-###Operator and Description
+### Operator and Description
 + = (Simple Assignment )
 Assigns values from the right side operand to the left side operand
 Ex: C = A + B will assign the value of A + B into C
@@ -265,7 +265,7 @@ else{
 }
 
 ```
-###For Loop
+### For Loop
 ```javascript
 var count;
 console.log ("Starting Loop");
@@ -277,13 +277,13 @@ for(count = 0; count < 10; count++){
 
 console.log ("Loop stopped!");
 ```
-###Declaring array
+### Declaring array
 ```javascript
 var fruits = [ "apple", "orange", "mango" ];
 fruits.length; //2
 
 ```
-###Declaring function
+### Declaring function
 ```javascript
 function sayHello(name)
 {
@@ -293,7 +293,7 @@ function sayHello(name)
 sayHello(“Tomasz”)
 
 ```
-###Anonymous function
+### Anonymous function
 
 ```javascript
 var greetMe = function(){
@@ -303,7 +303,7 @@ var greetMe = function(){
 greetMe();
 ```
 
-###Objects
+### Objects
 You can see an object as a such block of values
 
 
@@ -327,7 +327,7 @@ remember you can get your object value in the two ways:
 person.firstName
 person[‘firstName’]
 
-###Node api 
+### Node api 
 https://nodejs.org/api/index.html
 ```javascript
 var util = require(‘util’)
@@ -336,7 +336,7 @@ util.log(greeting)
 
 ```
 
-###Class example
+### Class example
 ```javascript
 
 
@@ -354,7 +354,7 @@ console.log(‘Hello ’+ this.firstname)
 
 }
 ```
-###Callbacks
+### Callbacks
 
 callback is a function passed to some other function, which we assume will be invoked at some point. The function “call back” invoking the function you give it when it is done doing its work.
 
@@ -385,7 +385,7 @@ greet(function(data){
 the function I invoked will invoke function I will give
 
 
-###Files 
+### Files 
 
 We can use synchronous convention: 
 
@@ -485,7 +485,7 @@ In that we emulate code from listing …
 		fs.close(handle, () => {});
 	});
 
-###Declaring Objects
+### Declaring Objects
 ```javascript
 var o1 = new Object();
 var o2 = {}
@@ -500,23 +500,23 @@ user[“fruit”] = “bananna”
 ```javascript
 Object.keys(user).length
 ```
-###How to declare arrays:
+### How to declare arrays:
 ```javascript
 var arr= new Array();
 var arr2 = [];
 ```
 
-###how to check array?
+### how to check array?
 ```javascript
 Array.isArray(ar);
 ```
 
-###add a new element to an array:
+### add a new element to an array:
 ```javascript
 arr3.push(‘new element’)
 ```
 
-###Iteration 
+### Iteration 
 ```javascript
 var user = {name: “tom”, surname:”krajewski”};
 for (key in user){
@@ -524,14 +524,14 @@ for (key in user){
 }
 ```
 
-###Easier "for" loop 
+### Easier "for" loop 
 ```javascript
 var x = [“ala”,”ma”,”kota”];
 for (value of x){
 	console.log(value);
 }
 ```
-###Error handling
+### Error handling
 if you get use to syntax try catch… you need to forget it for NodeJS
 
 do_something (par1, par2, par3, (error, result) =>{
@@ -655,7 +655,7 @@ Sources:
 https://www.tutorialspoint.com/javascript/
 https://www.tutorialspoint.com/nodejs/ 
 
-##Alexa with node.js<div id='id-section3'/> 
+## Alexa with node.js<div id='id-section3'/> 
 
 I choose only the most interesting parts from:
 
@@ -663,13 +663,13 @@ https://www.npmjs.com/package/alexa-sdk
 
 and added examples from my template
 
-###Basic Project Structure
+### Basic Project Structure
 Your HelloWorld skill needs to have:
 
 entry point to your skill where you'll import all packages needed for the skill, receive the events, set appId, set dynamoDB table (if you use AWS), register handlers and so on;
 handler functions which handle each request.
 
-###Set Entry Point
+### Set Entry Point
 To do this within your own project simply create a file named index.js and add the following to it:
 
 ```javascript
@@ -690,7 +690,7 @@ const templateHandlers = require('./alexa/handlers/template.handlers');
 ```
 This will import alexa-sdk and set up an Alexa object for us to work with.
 
-###Implement Handler Functions
+###  Implement Handler Functions
 Next, we need to handle the events and intents for our skill. Alexa-sdk makes it simple to have a function fire an intent. You can implement the handers functions in index.js file just created or you can also write in separate files and import them later. I will show you an example how to do it in a separate files!
 
 It is always good to have newSession.handlers. It means that your skill will starts always from here
@@ -751,13 +751,13 @@ you can define here what your user will hear first from alexa.
 ```
 Alexa will ask your user What is your name? and wait for an answer. If user won't respond alexa will ask him second time "Please say your name again?"
 
-###More about alexa responses!
+### More about alexa responses!
 Build response first using responseBuilder
 
 If you want to manually create your own responses, you can use this.response . this.response contains a series of functions, that you can use to set the different properties of the response. This allows you to take advantage of the Alexa Skills Kit's built-in audio and video player support. Once you've set up your response, you can just call this.emit(':responseReady') to send your response to Alexa. The functions within this.response are also chainable, so you can use as many as you want in a row. Here is full list example of creating response using responseBuilder.
 
 --------Extra------
-####Response Syntax
+#### Response Syntax
 ****
 
 Code | Description
@@ -991,7 +991,7 @@ A:  "Hi, What is your name?"
 or
 A: "Hey ho, say your name please!"
 
-###Built-in intents
+### Built-in intents
 Amazon want to help developers and delivers some help. You could assume you will always use some built-in intents as HelpIntent or StopIntntent. In that case you dont need to extend your interaction model utterances
 
 They are a normal functions you can add to any alexa handler (state)
