@@ -655,7 +655,62 @@ Sources:
 https://www.tutorialspoint.com/javascript/
 https://www.tutorialspoint.com/nodejs/ 
 
-## Alexa with node.js<div id='id-section3'/> 
+## MongoDb<div id='id-section3'/> 
+
+Many concepts in MySQL have close analogs in MongoDB. This table outlines some of the common concepts in each system.
+	
+	
+	
+	Field
+Joins	Embedded documents, linking
+
+| MySQL        | MongoDB        |
+| ------------- |:-------------:| 
+|   Table    | Collection | 
+| Row      | Document      | 
+| Column| Field    |
+| Joins| Embedded documents, linking    |
+
+Query Language
+
+**MySQL**
+```
+INSERT INTO users (user_id, age, status)
+VALUES ('bcd001', 45, 'A')
+```
+**MongoDB**
+```
+db.users.insert({
+  user_id: 'bcd001',
+  age: 45,
+  status: 'A'
+})
+```
+**MySQL**
+```
+SELECT * FROM users
+```
+**MongoDB**
+```
+db.users.find()
+```
+**MySQL**
+```
+UPDATE users SET status = 'C'
+WHERE age > 25
+```
+**MongoDB**
+```
+db.users.update(
+  { age: { $gt: 25 } },
+  { $set: { status: 'C' } },
+  { multi: true }
+)
+```
+
+
+
+## Alexa with node.js<div id='id-section4'/> 
 
 I choose only the most interesting parts from:
 
